@@ -72,7 +72,7 @@ function App() {
       <main>
         <section className="hero">
           <div className="announcement">
-            ✨ Trusted by 2 researchers worldwide
+            🐾 Trusted by 2 researchers worldwide
           </div>
 
           <h1>
@@ -166,9 +166,16 @@ function App() {
                 <span>FORMAT</span>
                 <strong>CSV</strong>
               </div>
-              <div>
-                <span>LICENSE</span>
-                <strong>MIT</strong>
+              <div className="author-meta">
+                <img
+                  className="author-avatar"
+                  src="/author-cat.png"
+                  alt="OddlyDB Chief Research Cat"
+                />
+                <div className="author-details">
+                  <span>AUTHOR</span>
+                  <strong>Ram Saltman</strong>
+                </div>
               </div>
             </div>
 

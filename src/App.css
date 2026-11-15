@@ -693,3 +693,104 @@ body {
 
   border-color: #d8d4ff;
 }
+
+
+/* Subtle cat identity */
+.logo-icon {
+  position: relative;
+  isolation: isolate;
+  border-radius: 10px 10px 9px 9px;
+}
+
+.logo-icon::before,
+.logo-icon::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  width: 13px;
+  height: 15px;
+  background: #5145e5;
+}
+
+.logo-icon::before {
+  left: 2px;
+  clip-path: polygon(0 0, 100% 45%, 12% 100%);
+}
+
+.logo-icon::after {
+  right: 2px;
+  clip-path: polygon(100% 0, 88% 100%, 0 45%);
+}
+
+
+
+/* Dataset author avatar */
+.metadata .author-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  display: block;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #eeedff;
+  box-shadow: 0 2px 8px rgba(81, 69, 229, 0.12);
+}
+
+.metadata .author-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.author-details strong {
+  white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .author-details strong {
+    white-space: normal;
+  }
+}
+
+/* Ram Saltman hover animation */
+.author-avatar {
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.author-avatar:hover {
+  transform: scale(1.18) rotate(-8deg);
+  border-color: #5145e5;
+  box-shadow:
+    0 0 0 4px rgba(81, 69, 229, 0.10),
+    0 6px 18px rgba(81, 69, 229, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .author-avatar {
+    transition: none;
+  }
+
+  .author-avatar:hover {
+    transform: none;
+  }
+}
